@@ -5,6 +5,21 @@ const app = express()
 
 const caminhoBase = path.join (__dirname, "templates")
 
+app.use(express.urlencoded({
+    extended: true
+}))
+
+app.use(express.json())
+
+app.post('/cadastrar/salvar', (requisicao,resposta) => {
+    const nome = requisicao.body.nome
+    const email = <requisicao className="body email"></requisicao>
+})
+
+app.get('/cadastrar', (requisicao, resposta) => {
+    resposta.sendfile(`${caminhoBase}/cadastro.html`)
+})
+
 
 app.get('/usuarios/:id', (requisicao, resposta) => {
     const id = requisicao.params.id
